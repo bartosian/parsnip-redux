@@ -1,17 +1,13 @@
 import React, { Component } from 'react';
 import TasksPage from './components/TasksPage';
+import { createTask } from "./actions";
 import { connect } from 'react-redux';
 
 
 class App extends Component {
 
     onCreateTask = ({ title, description }) => {
-        this.props.dispatch({
-            type: 'CREATE_TASK',
-            payload: {
-            title,
-                description }
-    }); }
+        this.props.dispatch(createTask({title, description})); }
 
     render() {
     return (
@@ -25,7 +21,7 @@ class App extends Component {
 
 function mapStateToProps(state) {
     return {
-        tasks: state
+        tasks: state.tasks
     };
 }
 
