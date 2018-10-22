@@ -1,11 +1,19 @@
-import React, { Component } from 'react'; import TasksPage from './components/TasksPage';
+import React, { Component } from 'react';
+import TasksPage from './components/TasksPage';
+import { connect } from 'react-redux';
 
 
 class App extends Component { render() {
     return (
         <div className="main­content">
-            <TasksPage tasks={mockTasks} /> </div>
+            <TasksPage tasks={this.props.tasks} /> </div>
     ); }
 }
 
-export default App;
+function mapStateToProps(state) {
+    return {
+        tasks: state
+    };
+}
+
+export default connect(mapStateToProps)(App);
