@@ -6,7 +6,7 @@ import { createStore } from 'redux';
 import tasks from './reducers';
 import * as serviceWorker from './serviceWorker';
 
-const store = createStore();
+const store = createStore(tasks);
 
 ReactDOM.render(<App />, document.getElementById('root'));
 
