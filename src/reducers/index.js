@@ -4,31 +4,20 @@ const INITIAL_STATE = {
     isLoading: false
 };
 
-export default function tasks(state = { tasks: [] }, action) {
+export default function tasks(state = INITIAL_STATE, action) {
     switch (action.type) {
-        case 'CREATE_TASK': {
-            return { tasks: [...state.tasks, action.payload]}
-        }
-        case 'EDIT_TASK': {
-            const tasks = state.tasks.map(t => {
-                if(t.id === action.payload.id) {
-                    return Object.assign({}, t, action.payload.params);
-                }
-
-                return t;
-            });
-
-
-            return { tasks };
-        }
-
         case 'FETCH_TASKS_SUCCEEDED': {
-            return { tasks:  action.payload.tasks }
+            return {
+                ...state,
+                isLoading: false,
+                tasks:  action.payload.tasks
+            }
         }
 
         case 'CREATE_TASK_SUCCEEDED': {
 
             return {
+                ...state,
                 tasks: state.tasks.concat(action.payload.task),
             };
         }
@@ -36,12 +25,15 @@ export default function tasks(state = { tasks: [] }, action) {
         case 'EDIT_TASK_SUCCEEDED': {
 
             const { payload } = action;
+            const nextTasks = state.tasks.map(task => {
+                if (task.id === payload.task.id) {
+                    return payload.task;
+                }
+                return task; });
             return {
-                tasks: state.tasks.map(task => {
-                    if (task.id === payload.task.id) {
-                        return payload.task; }
-                    return task; }),
-            };
+                ...state,
+                tasks: nextTasks
+         };
         }
     }
     return state
