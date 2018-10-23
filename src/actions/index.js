@@ -1,21 +1,42 @@
 import * as api from "../api";
 
 
-export function createTask({ title, description }) {  return {
-    type: 'CREATE_TASK',
-    payload: {
-        id: uniqueId(), title,
-    description,
-    status: 'Unstarted',
-}, };
+export function createTask({ title, description, status='Unstarted' }) {
+    return function(dispatch) {
+        api.createTask({title, description, status})
+            .then(resp => {
+                dispatch(createTaskSucceeded(resp.data))
+            });
+    }
 }
 
-export function editTask( id, params = {} ) {  return {
-    type: 'EDIT_TASK',
-    payload: {
-        id: id,
-        params
-    }, };
+export function editTask(id, params = {}) {
+    return (dispatch, getState) => {
+    const task = getTaskById(getState().tasks, id);
+    const updatedTask = Object.assign({}, task, params);
+    api.editTask(id, updatedTask).then(resp => { dispatch(editTaskSucceeded(resp.data));
+    }); };
+}
+function getTaskById(tasks, id) {
+    return tasks.find(task => task.id === id);
+}
+
+export function createTaskSucceeded(task) {
+    return {
+        type: 'CREATE_TASK_SUCCEEDED',
+        payload: {
+            task
+        }
+    };
+}
+
+export function editTaskSucceeded(task) {
+    return {
+        type: 'UPDATE_TASK_SUCCEEDED',
+        payload: {
+            task
+        }
+    };
 }
 
 export function fetchTasksSucceeded(tasks) {

@@ -4,7 +4,6 @@
 export default function tasks(state = { tasks: [] }, action) {
     switch (action.type) {
         case 'CREATE_TASK': {
-            console.log(state.tasks);
             return { tasks: [...state.tasks, action.payload]}
         }
         case 'EDIT_TASK': {
@@ -22,6 +21,20 @@ export default function tasks(state = { tasks: [] }, action) {
 
         case 'FETCH_TASKS_SUCCEEDED': {
             return { tasks:  action.payload.tasks }
+        }
+
+        case 'CREATE_TASK_SUCCEEDED': {
+
+            return {
+                tasks: state.tasks.concat(action.payload.task),
+            };
+        }
+
+        case 'UPDATE_TASK_SUCCEEDED': {
+
+            return {
+                tasks: state.tasks.concat(action.payload.task),
+            };
         }
     }
     return state
