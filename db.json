@@ -1,10 +1,6 @@
 {
   "tasks": [
     {
-      "status": "Completed",
-      "id": 1
-    },
-    {
       "id": 2,
       "title": "Peace on Earth",
       "description": "No big deal.",
@@ -14,7 +10,7 @@
       "id": 3,
       "title": "Create Facebook for dogs",
       "description": "The hottest new social network",
-      "status": "Completed"
+      "status": "In Progress"
     }
   ]
 }

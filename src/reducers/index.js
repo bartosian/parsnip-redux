@@ -30,10 +30,14 @@ export default function tasks(state = { tasks: [] }, action) {
             };
         }
 
-        case 'UPDATE_TASK_SUCCEEDED': {
+        case 'EDIT_TASK_SUCCEEDED': {
 
+            const { payload } = action;
             return {
-                tasks: state.tasks.concat(action.payload.task),
+                tasks: state.tasks.map(task => {
+                    if (task.id === payload.task.id) {
+                        return payload.task; }
+                    return task; }),
             };
         }
     }
