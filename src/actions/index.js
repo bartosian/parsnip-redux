@@ -1,5 +1,9 @@
 import * as api from "../api";
 
+function fetchTasksStarted() { return {
+    type: 'FETCH_TASKS_STARTED', };
+}
+
 
 export function createTask({ title, description, status='Unstarted' }) {
     return function(dispatch) {
