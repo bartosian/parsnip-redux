@@ -70,11 +70,11 @@ export function fetchTasks() {
         api.fetchTasks()
             .then(resp => {
 
-                // setTimeout(() => {
-                //     dispatch(fetchTasksSucceeded(resp.data));
-                // }, 2000);
+                setTimeout(() => {
+                    dispatch(fetchTasksSucceeded(resp.data));
+                }, 2000);
 
-                throw new Error('Oh noes! Unable to fetch tasks!');
+                // throw new Error('Oh noes! Unable to fetch tasks!');
 
             }).catch(err => {
                 dispatch(fetchTasksFailed(err.message));

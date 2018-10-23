@@ -7,6 +7,7 @@ import tasksReducer from './reducers';
 import { Provider } from 'react-redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import  thunk  from 'redux-thunk';
+import logger from './middleware/logger';
 import * as serviceWorker from './serviceWorker';
 
 const rootReducer = (state={}, action) => {
@@ -15,7 +16,7 @@ const rootReducer = (state={}, action) => {
     }
 };
 
-const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(thunk)));
+const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(thunk, logger)));
 
 ReactDOM.render(
     <Provider store={ store }>
