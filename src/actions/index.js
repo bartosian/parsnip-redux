@@ -29,6 +29,12 @@ function getTaskById(tasks, id) {
     return tasks.find(task => task.id === id);
 }
 
+function fetchTasksFailed(error) { return {
+    type: 'FETCH_TASKS_FAILED', payload: {
+        error, },
+}; }
+
+
 export function createTaskSucceeded(task) {
     return {
         type: 'CREATE_TASK_SUCCEEDED',
