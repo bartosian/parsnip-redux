@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import TasksPage from './components/TasksPage';
-import { createTask, editTask } from "./actions";
+import { createTask, editTask, fetchTasks } from "./actions";
 import { connect } from 'react-redux';
 
 
@@ -11,6 +11,10 @@ class App extends Component {
 
     onEditStatus = (id, status) => {
         this.props.dispatch(editTask(id, { status }));
+    }
+
+    componentDidMount() {
+        this.props.dispatch(fetchTasks());
     }
 
     render() {

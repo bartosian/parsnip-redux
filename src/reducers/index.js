@@ -1,7 +1,7 @@
 
 
 
-export default function tasks(state = { tasks: mockTasks }, action) {
+export default function tasks(state = { tasks: [] }, action) {
     switch (action.type) {
         case 'CREATE_TASK': {
             console.log(state.tasks);
