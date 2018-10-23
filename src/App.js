@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import TasksPage from './components/TasksPage';
 import { createTask, editTask, fetchTasks } from "./actions";
 import { connect } from 'react-redux';
-import FlashMessage from './components/FlashMessage';;
+import Flashmessage from './components/Flashmessage';;
 
 
 class App extends Component {
@@ -23,7 +23,7 @@ class App extends Component {
 
         <div className="main­content">
             {this.props.error &&
-            <FlashMessage message={this.props.error} />
+            <Flashmessage message={this.props.error} />
             }
             <TasksPage
                 tasks={this.props.tasks}
