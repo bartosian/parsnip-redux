@@ -50,7 +50,18 @@ class TasksPage extends Component {
                 /> );
         }); }
 
-    render() { return (
+    render() {
+        if(this.props.isLoading) {
+            return (
+                <div>LOADING...</div>
+            )
+        }
+
+
+
+        return (
+
+
         <div className="task­list">
             <div className="task­list­header">
                 <button

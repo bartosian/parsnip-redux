@@ -14,6 +14,13 @@ export default function tasks(state = INITIAL_STATE, action) {
             }
         }
 
+        case 'FETCH_TASKS_STARTED': {
+            return {
+                ...state,
+                isLoading: true,
+            };
+        }
+
         case 'CREATE_TASK_SUCCEEDED': {
 
             return {

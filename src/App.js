@@ -22,6 +22,7 @@ class App extends Component {
         <div className="main­content">
             <TasksPage
                 tasks={this.props.tasks}
+                isLoading={ this.props.isLoading }
                 onCreateTask={ this.onCreateTask }
                 onEditStatus = { this.onEditStatus }
             /> </div>
@@ -29,8 +30,11 @@ class App extends Component {
 }
 
 function mapStateToProps(state) {
+    const { tasks, isLoading } = state.tasks;
     return {
-        tasks: state.tasks
+        tasks,
+        isLoading
+
     };
 }
 
