@@ -1,5 +1,8 @@
 
-
+const INITIAL_STATE = {
+    tasks: [],
+    isLoading: false
+};
 
 export default function tasks(state = { tasks: [] }, action) {
     switch (action.type) {
