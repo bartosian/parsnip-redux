@@ -20,7 +20,7 @@ const rootReducer = (state={}, action) => {
     }
 };
 
-const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(thunk, sagaMiddleware)));
+const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(sagaMiddleware, thunk )));
 sagaMiddleware.run(rootSaga);
 
 ReactDOM.render(
