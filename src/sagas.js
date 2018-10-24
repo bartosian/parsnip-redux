@@ -1,4 +1,4 @@
-import { fork } from 'redux-saga/effects';
+import { fork, take } from 'redux-saga/effects';
 
 export default function* rootSaga() {
     yield fork(watchFetchTasks);
@@ -7,7 +7,10 @@ export default function* rootSaga() {
 }
 
 function* watchFetchTasks() {
-    console.log('watching!');
+    while (true) {
+        yield take('FETCH_TASKS_STARTED');
+        console.log('started!');
+    }
 }
 
 function* watchSomethingElse() {
