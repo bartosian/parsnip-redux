@@ -1,7 +1,9 @@
 import { fork } from 'redux-saga/effects';
 
 export default function* rootSaga() {
-    console.log('Root saga reporting for duty!');
+    yield fork(watchFetchTasks);
+    yield  fork(watchSomethingElse);
+
 }
 
 function* watchFetchTasks() {
