@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8263b4bc-2b7f-43d4-9cdd-9b68c211b203" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-    </list>
+    <list default="true" id="8263b4bc-2b7f-43d4-9cdd-9b68c211b203" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -26,14 +23,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="201">
-              <caret line="23" column="27" selection-start-line="23" selection-start-column="27" selection-end-line="23" selection-end-column="27" />
+            <state relative-caret-position="608">
+              <caret line="32" column="72" lean-forward="true" selection-start-line="32" selection-start-column="72" selection-end-line="32" selection-end-column="72" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="sagas.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/sagas.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="19">
+              <caret line="1" column="46" selection-start-line="1" selection-start-column="46" selection-end-line="1" selection-end-column="46" />
             </state>
           </provider>
         </entry>
@@ -85,6 +91,7 @@
         <option value="$PROJECT_DIR$/src/middleware/logger.js" />
         <option value="$PROJECT_DIR$/src/actions/index.js" />
         <option value="$PROJECT_DIR$/src/index.js" />
+        <option value="$PROJECT_DIR$/src/sagas.js" />
       </list>
     </option>
   </component>
@@ -128,36 +135,6 @@
               <item name="parsnip" type="b2602c69:ProjectViewProjectNode" />
               <item name="parsnip" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="parsnip" type="b2602c69:ProjectViewProjectNode" />
-              <item name="parsnip" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="actions" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="parsnip" type="b2602c69:ProjectViewProjectNode" />
-              <item name="parsnip" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="api" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="parsnip" type="b2602c69:ProjectViewProjectNode" />
-              <item name="parsnip" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="parsnip" type="b2602c69:ProjectViewProjectNode" />
-              <item name="parsnip" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="middleware" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="parsnip" type="b2602c69:ProjectViewProjectNode" />
-              <item name="parsnip" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="reducers" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -205,12 +182,12 @@
       <option name="presentableId" value="Default" />
       <updated>1540246440046</updated>
       <workItem from="1540246442560" duration="6625000" />
-      <workItem from="1540297000693" duration="9769000" />
+      <workItem from="1540297000693" duration="10001000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16394000" />
+    <option name="totallyTimeSpent" value="16626000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="38" y="23" width="1642" height="947" extended-state="0" />
@@ -415,11 +392,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="201">
-          <caret line="23" column="27" selection-start-line="23" selection-start-column="27" selection-end-line="23" selection-end-column="27" />
+        <state relative-caret-position="608">
+          <caret line="32" column="72" lean-forward="true" selection-start-line="32" selection-start-column="72" selection-end-line="32" selection-end-column="72" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sagas.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="1" column="46" selection-start-line="1" selection-start-column="46" selection-end-line="1" selection-end-column="46" />
         </state>
       </provider>
     </entry>
