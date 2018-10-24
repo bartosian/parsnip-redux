@@ -8,7 +8,11 @@ import { Provider } from 'react-redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import  thunk  from 'redux-thunk';
 import logger from './middleware/logger';
+import createSagaMiddleware from 'redux-saga';
+import rootSaga from './sagas';
 import * as serviceWorker from './serviceWorker';
+
+const sagaMiddleware = createSagaMiddleware();
 
 const rootReducer = (state={}, action) => {
     return {
@@ -16,7 +20,8 @@ const rootReducer = (state={}, action) => {
     }
 };
 
-const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(thunk, logger)));
+const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(thunk, sagaMiddleware)));
+sagaMiddleware.run(rootSaga);
 
 ReactDOM.render(
     <Provider store={ store }>
